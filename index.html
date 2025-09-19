@@ -98,6 +98,21 @@
         #sidebar.sidebar-expanded #logo-expanded {
             opacity: 1;
         }
+        @media (max-width: 767px) {
+          #sidebar {
+            width: 0 !important;
+            min-width: 0 !important;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+          }
+          #sidebar.sidebar-expanded {
+            width: 30vw !important; /* menu cobre 80% da tela */
+            min-width: 0 !important;
+          }
+          #main-content {
+            margin-left: 0 !important;
+          }
+        }        
     </style>
 </head>
 <body class="antialiased">
@@ -463,3 +478,4 @@
 
 </body>
 </html>
+
