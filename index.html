@@ -98,23 +98,6 @@
         #sidebar.sidebar-expanded #logo-expanded {
             opacity: 1;
         }
-
-        /* ----------- MOBILE MENU FIX ----------- */
-        @media (max-width: 767px) {
-          #sidebar {
-            width: 0 !important;
-            min-width: 0 !important;
-            transition: width 0.3s ease-in-out;
-            overflow: hidden;
-          }
-          #sidebar.sidebar-expanded {
-            width: 80vw !important; /* menu cobre 80% da tela */
-            min-width: 0 !important;
-          }
-          #main-content {
-            margin-left: 0 !important;
-          }
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -122,35 +105,46 @@
     <!-- MENU LATERAL -->
     <nav id="sidebar" class="fixed top-0 left-0 h-full bg-stone-800 text-white z-50 flex flex-col">
         <!-- Logo -->
-        <div class="h-20 flex items-center justify-center border-b border-stone-700 flex-shrink-0 px-0 overflow-hidden rounded-md bg-white">
+        <div class="h-20 flex items-center justify-center border-b border-stone-700 flex-shrink-0 px-0 overflow-hidden">
              <a href="#" class="relative w-full h-full flex items-center justify-center">
-                <img id="logo-expanded" src="./assets/logo-completo-branco.svg" alt="Logo Ana Karoline" class="h-16 w-full object-contain transition-opacity duration-200 rounded-md">
-                <img id="logo-compact" src="./assets/logo-ak-branco.svg" alt="Logo AK" class="h-8 w-8 object-contain absolute transition-opacity duration-200 rounded-md">
+                <!-- 
+                  LOGO COMPLETO (Menu Expandido)
+                  Melhor prática: Coloque seu logo completo (versão branca) na pasta 'assets'.
+                  Exemplo de nome: 'logo-completo-branco.svg' ou '.png'
+                -->
+                <img id="logo-expanded" src="./assets/logo-completo-branco.svg" alt="Logo Ana Karoline" class="h-full w-full object-cover transition-opacity duration-200">
+                
+                <!-- 
+                  LOGO REDUZIDO (Menu Recolhido)
+                  Melhor prática: Coloque seu logo 'AK' (versão branca) na pasta 'assets'.
+                  Exemplo de nome: 'logo-ak-branco.svg' ou '.png'
+                -->
+                <img id="logo-compact" src="./assets/logo-ak-branco.svg" alt="Logo AK" class="h-full w-full object-cover absolute transition-opacity duration-200">
              </a>
         </div>
         <!-- Links de Navegação -->
         <ul class="flex-grow">
             <li>
                 <a href="#portfolio" class="flex items-center h-16 px-6 hover:bg-stone-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-lin[...]
                     <span class="sidebar-link-text ml-4 whitespace-nowrap">Portfólio</span>
                 </a>
             </li>
             <li>
                 <a href="#sobre" class="flex items-center h-16 px-6 hover:bg-stone-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8m-8 4h8m-8-8h8" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-lin[...]
                     <span class="sidebar-link-text ml-4 whitespace-nowrap">Sobre</span>
                 </a>
             </li>
             <li>
                 <a href="#processo" class="flex items-center h-16 px-6 hover:bg-stone-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18m-9 5h9" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-lin[...]
                     <span class="sidebar-link-text ml-4 whitespace-nowrap">Processo</span>
                 </a>
             </li>
             <li>
                 <a href="#contato" class="flex items-center h-16 px-6 hover:bg-stone-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 8v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-lin[...]
                     <span class="sidebar-link-text ml-4 whitespace-nowrap">Contato</span>
                 </a>
             </li>
@@ -174,11 +168,11 @@
                 <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
                     <div class="text-center md:text-left">
                         <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 font-lora fade-in-up">Criando lares, contando histórias.</h1>
-                        <p class="text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-8 text-stone-600 fade-in-up" style="animation-delay: 0.2s;">Meu trabalho é transformar casas em lares e espaços em refúgios, com uma arquitetura que acolhe, inspira e reflete a essência de quem vive ali.</p>
-                        <a href="#portfolio" class="bg-stone-800 text-white font-bold py-3 px-8 rounded-full hover:bg-stone-700 transition-transform hover:scale-105 inline-block fade-in-up" style="animation-delay: 0.3s;">Conheça meus projetos</a>
+                        <p class="text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-8 text-stone-600 fade-in-up" style="animation-delay: 0.2s;">Meu trabalho é transformar casas em lares e espaços em re[...]
+                        <a href="#portfolio" class="bg-stone-800 text-white font-bold py-3 px-8 rounded-full hover:bg-stone-700 transition-transform hover:scale-105 inline-block fade-in-up" style="ani[...]
                     </div>
                     <div class="fade-in-up hidden md:block" style="animation-delay: 0.3s;">
-                        <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=2574&auto=format&fit=crop" alt="Interior de uma casa moderna e aconchegante" class="rounded-lg shadow-xl w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=2574&auto=format&fit=crop" alt="Interior de uma casa moderna e aconchegante" class="rounded-lg sha[...]
                     </div>
                 </div>
             </section>
@@ -204,7 +198,7 @@
                         <!-- Projeto 1 -->
                         <div class="project-card fade-in-up" data-category="residencial">
                             <div class="relative overflow-hidden rounded-lg group aspect-w-4 aspect-h-3">
-                                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2574&auto=format&fit=crop" alt="Projeto de Interiores para Sala de Estar" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2574&auto=format&fit=crop" alt="Projeto de Interiores para Sala de Estar" class="w-full h-[...]
                                 <div class="overlay absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                                     <h3 class="text-xl font-bold text-stone-800 font-lora mb-1">Casa Leticia & Anderson</h3>
                                     <p class="text-stone-600 text-sm">Design de Interiores</p>
@@ -214,7 +208,7 @@
                         <!-- Outros projetos seguem a mesma estrutura -->
                         <div class="project-card fade-in-up" data-category="comercial">
                             <div class="relative overflow-hidden rounded-lg group aspect-w-4 aspect-h-3">
-                                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2670&auto=format&fit=crop" alt="Edifício Comercial Moderno" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2670&auto=format&fit=crop" alt="Edifício Comercial Moderno" class="w-full h-full object-cove[...]
                                  <div class="overlay absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                                     <h3 class="text-xl font-bold text-stone-800 font-lora mb-1">Nexus Corporate Center</h3>
                                     <p class="text-stone-600 text-sm">Arquitetura Comercial</p>
@@ -223,7 +217,7 @@
                         </div>
                         <div class="project-card fade-in-up" data-category="urbano">
                              <div class="relative overflow-hidden rounded-lg group aspect-w-4 aspect-h-3">
-                                <img src="https://images.unsplash.com/photo-1549225893-601e381b854a?q=80&w=2574&auto=format&fit=crop" alt="Projeto de Planejamento Urbano" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1549225893-601e381b854a?q=80&w=2574&auto=format&fit=crop" alt="Projeto de Planejamento Urbano" class="w-full h-full object-c[...]
                                 <div class="overlay absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                                     <h3 class="text-xl font-bold text-stone-800 font-lora mb-1">Parque Metropolitano</h3>
                                     <p class="text-stone-600 text-sm">Planejamento Urbano</p>
@@ -232,7 +226,7 @@
                         </div>
                         <div class="project-card fade-in-up" data-category="residencial">
                              <div class="relative overflow-hidden rounded-lg group aspect-w-4 aspect-h-3">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop" alt="Casa Minimalista" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop" alt="Casa Minimalista" class="w-full h-full object-cover transf[...]
                                 <div class="overlay absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                                     <h3 class="text-xl font-bold text-stone-800 font-lora mb-1">Casa Atrium</h3>
                                     <p class="text-stone-600 text-sm">Arquitetura Residencial</p>
@@ -241,7 +235,7 @@
                         </div>
                         <div class="project-card fade-in-up" data-category="comercial">
                              <div class="relative overflow-hidden rounded-lg group aspect-w-4 aspect-h-3">
-                                <img src="https://images.unsplash.com/photo-1593902553290-34938a95777a?q=80&w=2564&auto=format&fit=crop" alt="Loja Conceito" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1593902553290-34938a95777a?q=80&w=2564&auto=format&fit=crop" alt="Loja Conceito" class="w-full h-full object-cover transform[...]
                                 <div class="overlay absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                                     <h3 class="text-xl font-bold text-stone-800 font-lora mb-1">Galeria Vértice</h3>
                                     <p class="text-stone-600 text-sm">Arquitetura Comercial</p>
@@ -250,7 +244,7 @@
                         </div>
                         <div class="project-card fade-in-up" data-category="urbano">
                              <div class="relative overflow-hidden rounded-lg group aspect-w-4 aspect-h-3">
-                                <img src="https://images.unsplash.com/photo-1504222490345-c055e3a071dc?q=80&w=2670&auto=format&fit=crop" alt="Revitalização de Orla" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1504222490345-c055e3a071dc?q=80&w=2670&auto=format&fit=crop" alt="Revitalização de Orla" class="w-full h-full object-cover[...]
                                 <div class="overlay absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                                     <h3 class="text-xl font-bold text-stone-800 font-lora mb-1">Orla Fluvial Requalificada</h3>
                                     <p class="text-stone-600 text-sm">Planejamento Urbano</p>
@@ -265,12 +259,12 @@
             <section id="sobre" class="py-20 md:py-32">
                 <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <div class="fade-in-up">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop" alt="Arquiteta trabalhando em seu escritório" class="rounded-lg shadow-xl w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop" alt="Arquiteta trabalhando em seu escritório" class="rounded-lg shadow-xl[...]
                     </div>
                     <div class="fade-in-up" style="animation-delay: 0.2s;">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 font-lora">Sobre Mim</h2>
-                        <p class="text-stone-600 mb-6 leading-relaxed">Sou Arquiteta e Urbanista por formação e apaixonada por criar espaços que contam histórias. Para mim, projetar vai além de entregar beleza e funcionalidade. É sobre criar ambientes que envolvem, inspiram e acolhem.</p>
-                        <p class="text-stone-600 mb-8 leading-relaxed">Busco aliar a técnica com o afeto, usando o design para trazer mais conforto, bem-estar e, acima de tudo, felicidade para o seu lar ou negócio.</p>
+                        <p class="text-stone-600 mb-6 leading-relaxed">Sou Arquiteta e Urbanista por formação e apaixonada por criar espaços que contam histórias. Para mim, projetar vai além de e[...]
+                        <p class="text-stone-600 mb-8 leading-relaxed">Busco aliar a técnica com o afeto, usando o design para trazer mais conforto, bem-estar e, acima de tudo, felicidade para o seu [...]
                         <a href="#contato" class="border border-stone-800 text-stone-800 font-bold py-3 px-8 rounded-full hover:bg-stone-800 hover:text-white transition-colors">Vamos Conversar?</a>
                     </div>
                 </div>
@@ -281,13 +275,13 @@
                 <div class="container mx-auto px-6">
                     <div class="text-center mb-16 fade-in-up">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4 font-lora">Meu Processo Criativo</h2>
-                        <p class="max-w-2xl mx-auto text-stone-600">Acredito em um processo transparente e colaborativo, uma parceria construída com afeto do nosso primeiro café até a entrega do seu espaço.</p>
+                        <p class="max-w-2xl mx-auto text-stone-600">Acredito em um processo transparente e colaborativo, uma parceria construída com afeto do nosso primeiro café até a entrega do se[...]
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                         <!-- Passo 1 -->
                         <div class="fade-in-up" style="animation-delay: 0s;">
                             <div class="mb-4 inline-block p-4 border-2 border-stone-300 rounded-full">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search text-stone-700" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.442 1.398a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/></svg>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search text-stone-700" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.[...]
                             </div>
                             <h3 class="text-xl font-bold mb-2 font-lora">01. A Escuta</h3>
                             <p class="text-stone-600">Tudo começa com uma boa conversa. Quero ouvir seus sonhos, entender sua rotina e descobrir o que faz seu coração vibrar.</p>
@@ -295,7 +289,7 @@
                         <!-- Passo 2 -->
                         <div class="fade-in-up" style="animation-delay: 0.2s;">
                             <div class="mb-4 inline-block p-4 border-2 border-stone-300 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-lightbulb text-stone-700" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.001 0A6 6 0 0 1 2 6zm10 7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h8v1z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-lightbulb text-stone-700" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10[...]
                             </div>
                             <h3 class="text-xl font-bold mb-2 font-lora">02. A Criação</h3>
                             <p class="text-stone-600">É aqui que as ideias ganham forma. Com esboços e imagens, construímos juntos o conceito que dará alma ao seu espaço.</p>
@@ -303,7 +297,7 @@
                         <!-- Passo 3 -->
                         <div class="fade-in-up" style="animation-delay: 0.4s;">
                             <div class="mb-4 inline-block p-4 border-2 border-stone-300 rounded-full">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-ruler text-stone-700" viewBox="0 0 16 16"><path d="M11.685.153a.5.5 0 0 1 .662.055l3.445 3.445a.5.5 0 0 1-.055.662l-8.5 8.5a.5.5 0 0 1-.662-.055L2.13 10.37a.5.5 0 0 1 .055-.662l8.5-8.5z"/></svg>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-ruler text-stone-700" viewBox="0 0 16 16"><path d="M11.685.153a.5.[...]
                             </div>
                             <h3 class="text-xl font-bold mb-2 font-lora">03. O Cuidado</h3>
                             <p class="text-stone-600">Com um olhar atento, desenvolvo o projeto técnico, escolhendo materiais e soluções com o máximo de cuidado e precisão.</p>
@@ -311,7 +305,9 @@
                         <!-- Passo 4 -->
                         <div class="fade-in-up" style="animation-delay: 0.6s;">
                             <div class="mb-4 inline-block p-4 border-2 border-stone-300 rounded-full">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-building-check text-stone-700" viewBox="0 0 16 16"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z"/><path d="M4.5 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-.5H5a.5.5 0 0 1-.5-.5M4.5 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-.5H5a.5.5 0 0 1-.5-.5M4.5 8.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-.5H5a.5.5 0 0 1-.5-.5"/></svg>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-building-check text-stone-700" viewBox="0 0 16 16"><path d="M12.5 16a3.5 [...]
+          <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z"/>
+          <path d="M4.5 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-.5H5a.5.5 0 0 1-.5-.5M4.5 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-.5H5a.5.5 0 0 1-.5-.5M4.5 8.5a.5.5 0[...]
                             </div>
                             <h3 class="text-xl font-bold mb-2 font-lora">04. A Realização</h3>
                             <p class="text-stone-600">Acompanho de perto a transformação do espaço, garantindo que o sonho projetado no papel se torne uma linda realidade.</p>
@@ -325,8 +321,8 @@
                 <div class="container mx-auto px-6 text-center">
                      <div class="fade-in-up">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4 font-lora">Vamos dar vida ao seu espaço?</h2>
-                        <p class="max-w-2xl mx-auto mb-8 text-stone-600">Se você sente que é o momento de criar um ambiente com a sua cara, que conte a sua história, eu adoraria fazer parte disso. Vamos conversar?</p>
-                        <a href="mailto:contato@anakaroline.com" class="bg-stone-800 text-white font-bold py-3 px-8 rounded-full hover:bg-stone-700 transition-transform hover:scale-105 inline-block">Me envie uma mensagem</a>
+                        <p class="max-w-2xl mx-auto mb-8 text-stone-600">Se você sente que é o momento de criar um ambiente com a sua cara, que conte a sua história, eu adoraria fazer parte disso. [...]
+                        <a href="mailto:contato@anakaroline.com" class="bg-stone-800 text-white font-bold py-3 px-8 rounded-full hover:bg-stone-700 transition-transform hover:scale-105 inline-block">M[...]
                      </div>
                 </div>
             </section>
@@ -340,19 +336,19 @@
                 <div class="flex justify-center space-x-6 mt-4">
                     <a href="https://www.instagram.com/ak_interiordeesign/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-stone-900 transition-colors">
                         <span class="sr-only">Instagram</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.602 4.602 0 0 1 1.675 1.076A4.602 4.602 0 0 1 21.475 6.92c.247.636.416 1.363.465 2.427.047 1.024.06 1.378.06 3.808s-.013 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.602 4.602 0 0 1-1.076 1.675 4.602 4.602 0 0 1-1.675 1.076c-.636.247-1.363.416-2.427.465-1.024.047-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.602 4.602 0 0 1-1.675-1.076 4.602 4.602 0 0 1-1.076-1.675c-.247-.636-.416-1.363-.465-2.427C2.013 14.315 2 13.961 2 11.531s.013-2.784.06-3.808c.049-1.064.218-1.791.465-2.427A4.602 4.602 0 0 1 3.601 3.62a4.602 4.602 0 0 1 1.675-1.076c.636-.247 1.363-.416 2.427-.465C9.531 2.013 9.885 2 12.315 2zm0 1.8c-2.413 0-2.697.012-3.637.058-.919.044-1.417.2-1.748.334-.438.171-.75.376-1.08.706-.33.33-.535.642-.706 1.08-.134.331-.29.829-.334 1.748-.046.94-.058 1.224-.058 3.637s.012 2.697.058 3.637c.044.919.2 1.417.334 1.748.171.438.376.75.706 1.08.33.33.642.535 1.08.706.331.134.829.29 1.748.334.94.046 1.224.058 3.637.058s2.697-.012 3.637-.058c.919-.044 1.417-.2 1.748-.334.438-.171.75-.376 1.08-.706.33-.33.535-.642.706-1.08.134-.331.29-.829.334-1.748.046-.94.058-1.224.058-3.637s-.012-2.697-.058-3.637c-.044-.919-.2-1.417-.334-1.748-.171-.438-.376-.75-.706-1.08-.33-.33-.642-.535-1.08-.706-.331-.134-.829-.29-1.748-.334-.94-.046-1.224-.058-3.637-.058zm0 3.24a5.275 5.275 0 1 0 0 10.55 5.275 5.275 0 0 0 0-10.55zm0 1.8a3.475 3.475 0 1 1 0 6.95 3.475 3.475 0 0 1 0-6.95zm7.05-1.125a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0z"/></svg>
-                    </a>
-                    <a href="#" class="text-stone-500 hover:text-stone-900 transition-colors">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.25h-3v-5.604c0-1.337-.026-3.063-1.872-3.063-1.874 0-2.161 1.462-2.161 2.972v5.695h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.037 0 3.6 2.001 3.6 4.599v5.597z"/></svg>
-                    </a>
-                    <a href="#" class="text-stone-500 hover:text-stone-900 transition-colors">
-                        <span class="sr-only">Pinterest</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.219-.947 1.406-6.037 1.406-6.037s-.359-.719-.359-1.781c0-1.668.967-2.916 2.174-2.916 1.025 0 1.52.769 1.52 1.692 0 1.031-.658 2.573-.998 4.008-.285 1.201.604 2.179 1.786 2.179 2.143 0 3.793-2.26 3.793-5.518 0-2.882-2.071-4.895-5.034-4.895-3.435 0-5.457 2.578-5.457 5.243 0 1.042.403 2.163.908 2.771.1.119.115.223.084.342-.092.367-.299 1.201-.339 1.367-.053.21-.173.254-.404.154-1.507-.617-2.449-2.555-2.449-4.115 0-3.354 2.831-7.366 8.446-7.366 4.513 0 7.481 3.267 7.481 6.782 0 4.65-2.583 8.123-6.408 8.123-1.285 0-2.495-.699-2.908-1.488l-.791 3.019c-.226.865-.672 1.949-1.003 2.613.754.232 1.551.358 2.385.358 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                </div>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4[...]
+                </a>
+                <a href="#" class="text-stone-500 hover:text-stone-900 transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.[...]
+                </a>
+                <a href="#" class="text-stone-500 hover:text-stone-900 transition-colors">
+                    <span class="sr-only">Pinterest</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441[...]
+                </a>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -464,5 +460,6 @@
             });
         });
     </script>
+
 </body>
 </html>
